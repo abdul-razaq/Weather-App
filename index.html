@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="./style.css">
+  <title>Weather App</title>
+</head>
+<body>
+
+  <!-- All of the 'w-' ids are data that we fetch from the API -->
+
+  <main class="container">
+    <h1 id="w-location" class="location"></h1>
+    <h3 id="w-description" class="description"></h3>
+    <h3 id="w-temperatureString" class="description-temperature"></h3>
+    <img src="" alt="" id="w-icon">
+
+    <ul id="w-details" class="list-group">
+      <li class="list-group__items" id="w-humidity"></li>
+      <li class="list-group__items" id="w-dewpoint"></li>
+      <li class="list-group__items" id="w-feels-like"></li>
+      <li class="list-group__items" id="w-wind"></li>
+    </ul>
+    <button class="btn btn__modal" data-target="locationModal">Change Location</button>
+  </main>
+
+  <section class="modal" id="locationModal">
+    <div class="modal__head">
+      <h5>Choose Location</h5>
+      <button class="close"><span>&times;</span></button>
+    </div>
+    <div class="modal__body">
+      <form id="w-form">
+        <div class="form__group">
+          <label for="city" class="form__label">City</label>
+          <input type="text" class="form__input" id="city" placeholder="Enter City...">
+        </div>
+        <div class="form__group">
+          <label for="state" class="form__label">State</label>
+          <input type="text" class="form__input" id="state" placeholder="Enter State...">
+        </div>
+      </form>
+    </div>
+    <div class="modal__footer">
+      <button class="btn btn__close">Close</button>
+      <button class="btn btn__saveChanges" id="w-change-button">Save changes</button>
+    </div>
+  </section>
+
+  <script src="./src/storage.js"></script>
+  <script src="./src/weather.js"></script>
+  <script src="./src/ui.js"></script>
+  <script src="./src/app.js"></script>
+</body>
+</html>
